@@ -116,10 +116,20 @@ text-decoration: none;
 
 .policy{
   font-size: 10px;
-  margin: 10px;
-  display: inline-flex;
+  margin: 20px;
+  align-items: center;
+  width: 80%;
+  text-align: center;
 }
+
 .policy>p{
   margin:0;
+  padding: 0;
+}
+
+.policy>p>a{
+  margin:2px;
+  text-decoration: none;
+  color:rgb(215, 66, 252);
   padding: 0;
 }
