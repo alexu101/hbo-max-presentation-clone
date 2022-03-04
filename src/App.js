@@ -14,13 +14,18 @@ function App() {
           <h4>INTRĂ ÎN CONT</h4>
         </header>
         <img src={heroes} alt="" />
+      </div>
+      <div className="Section2">
         <h1>HBO Max sosește pe 8 martie!</h1>
-        <h2>Pregatește-te de o experiență de vizionare diferită</h2>
-        <h4>INTRĂ ÎN CONT</h4>
-        <h4>INTRĂ ÎN CONT</h4>
-        <h4>INTRĂ ÎN CONT</h4>
-        <h4>INTRĂ ÎN CONT</h4>
-        <h4>INTRĂ ÎN CONT</h4>
+        <h3>Pregătește-te pentru o experiență de vizionare diferită</h3>
+        <form>
+          <input type="text" placeholder='Adresa de e-mail' />
+          <buttOn>ȚINE-MĂ LA CURENT!</buttOn>
+        </form>
+        <div className="policy">
+          <p>Prin completarea adresei de e-mail, accepți să primești e-mail-uri promoționale și alte oferte de la HBO Max (o companie WarnerMedia) și </p>
+          <p>PARTENERII săi prin e-mail, social media și alte canale. Pentru a-ți retrage consimțământul și pentru a afla detalii despre drepturile tale, vezi opțiunile disponibile în POLITICA DE CONFIDENȚIALITATE.</p>
+        </div>
       </div>
     </div>
   );
