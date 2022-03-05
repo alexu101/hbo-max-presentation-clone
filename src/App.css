@@ -51,7 +51,7 @@ font-family: 'Poppins', sans-serif;
   align-items: center;
   color: white;
   background: rgb(211,45,253);
-background: linear-gradient(0deg, rgb(5,3,43) 5%, rgba(15,1,19,1) 85%);
+background: linear-gradient(0deg, rgb(51, 6, 82) 5%, rgba(15,1,19,1) 85%);
 }
 
 .Section2 > h1{
@@ -112,6 +112,12 @@ text-decoration: none;
   border:2px solid rgb(190, 2, 190);
   font-weight: bold;
   cursor: pointer;
+  transition: all 0.2s ease-in;
+}
+
+.Section2 > form > button:hover{
+  border-color: rgb(232, 118, 255);
+  transition: all 0.3s ease-in;
 }
 
 .policy{
@@ -132,4 +138,65 @@ text-decoration: none;
   text-decoration: none;
   color:rgb(215, 66, 252);
   padding: 0;
+}
+
+.Section3{
+  display: flex;
+  background: rgb(110,13,144);
+  background: linear-gradient(90deg, rgba(110,13,144,1) 0%, rgba(67,12,116,1) 50%, rgba(30,7,61,1) 100%);
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color:white;
+  padding: 30px;
+}
+
+.Section3 > h1{
+  margin: 0;
+font-size: 30px;
+padding: 0;
+}
+
+.Section3>h3{
+  padding: 0;
+  margin: 0;
+  width: 60%;
+}
+
+.discount{
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.oldPrice{
+  font-size: 30px;
+  font-weight: 800;
+  text-decoration: line-through;
+}
+
+.newPrice{
+  margin:0;
+  padding: 0;
+  margin-left: 10px;
+  font-size: 40px;
+  font-weight: 900;
+}
+
+.newPrice>sup{
+  margin:0;
+  font-size: 20px;
+  font-weight: bold !important;
+}
+
+.Section3>h5{
+margin: 0;
+font-size: large;
+font-weight: 800;
+color: rgb(207, 168, 243);
+}
+
+.Section3 > p{
+  font-size: 10px;
+  max-width: 50%;
 }

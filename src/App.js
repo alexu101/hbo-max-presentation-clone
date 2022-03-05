@@ -27,6 +27,26 @@ function App() {
 
         </form>
       </div>
+      <div className="Section3">
+        <h1>O experiență unică. O ofertă pe care nu trebuie să o reatezi.</h1>
+        <h3>
+          Pentru a sărbători lansarea HBO Max, abonații noi și cei existenți beneficiază de o ofertă extraordinară: reducere de 33% la abonament - pe perioadă nelimitată*!
+        </h3>
+        <div className="price">
+          <div className="discount">
+            <div className="oldPrice">
+              <sup>4,99€</sup>
+            </div>
+            <div className="newPrice">
+              3,30€ <sup>/lună</sup>
+            </div>
+          </div>
+          <div className="message">
+          </div>
+        </div>
+        <h5>ÎNREGISTREAZĂ-TE ÎNTRE 8 ȘI 31 MARTIE</h5>
+        <p>*Atât timp cât îți păstrezi abonamentul. Oferta este valabilă doar pe HBOMax.com și prin partenerii selectați, până pe 31 martie 2022. Reducerea de 33% se menține pe întreaga durată a abonamentului și se aplică doar prețului abonamentului lunar, care poate suferi modificări de-a lungul timpului. Prețul redus este de 3,30 € (prețul standard este 4,99 €). Clienții pot renunța la abonament în orice moment.</p>
+      </div>
     </div>
   );
 }
