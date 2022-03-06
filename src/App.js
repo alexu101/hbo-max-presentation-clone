@@ -47,6 +47,23 @@ function App() {
         <h5>ÎNREGISTREAZĂ-TE ÎNTRE 8 ȘI 31 MARTIE</h5>
         <p>*Atât timp cât îți păstrezi abonamentul. Oferta este valabilă doar pe HBOMax.com și prin partenerii selectați, până pe 31 martie 2022. Reducerea de 33% se menține pe întreaga durată a abonamentului și se aplică doar prețului abonamentului lunar, care poate suferi modificări de-a lungul timpului. Prețul redus este de 3,30 € (prețul standard este 4,99 €). Clienții pot renunța la abonament în orice moment.</p>
       </div>
+      <div className="Section4">
+        <h1>Tot ce iubești. Într-un singur loc.</h1>
+        <h3>Cele mai spectaculoase blockbustere, cele mai îndrăznețe povești și filme clasice de neuitat sunt toate acum pe HBO Max.</h3>
+
+        <div className="promoVideo">
+          <iframe src="https://www.youtube.com/embed/6soiKvRl5rM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <h1 id='distractie'>Distracție maximă pentru întreaga familie</h1>
+        <h3>
+          Bucură-te de titluri emblematice Warner Bros, HBO, Max Originals, DC, Cartoon Network și multe altele, aflate pentru prima dată într-un singur loc.
+        </h3>
+        <div className="sliderAnimation1">
+
+        </div>
+        <div className="sliderAnimation2">
+        </div>
+      </div>
     </div>
   );
 }

@@ -12,6 +12,8 @@ font-family: 'Poppins', sans-serif;
   flex-direction: column;
 }
 
+/*SECTION 1*/
+
 .Section1{
   display: flex;
   flex-direction: column;
@@ -44,6 +46,8 @@ font-family: 'Poppins', sans-serif;
   color: white;
 
 }
+
+/*SECTION 2*/
 
 .Section2{
   display: flex;
@@ -140,6 +144,9 @@ text-decoration: none;
   padding: 0;
 }
 
+
+/*SECTION 3*/
+
 .Section3{
   display: flex;
   background: rgb(110,13,144);
@@ -200,3 +207,58 @@ color: rgb(207, 168, 243);
   font-size: 10px;
   max-width: 50%;
 }
+
+
+/*SECTION 4*/
+
+.Section4{
+  background: rgb(50,6,91);
+  background: radial-gradient(circle, rgba(50,6,91,1) 37%, rgba(4,4,40,1) 78%);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.Section4>h1{
+margin: 0;
+padding: 0;
+padding-bottom: 10px;
+padding-top: 10px;
+}
+
+.Section4>h3{
+  margin: 0;
+  padding: 0;
+  padding-bottom: 20px;
+  width: 65%;
+  max-width: auto;
+  padding-top:10px ;
+  font-weight: lighter;
+}
+
+.promoVideo{
+  position:relative;
+  overflow: hidden;
+  width: 65%;
+  padding-top: 36.625%;
+  
+}
+
+.promoVideo>iframe{
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+}
+
+#distractie{
+  padding-top: 70px !important;
+}
+
