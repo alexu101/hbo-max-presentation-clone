@@ -4,6 +4,7 @@ import { Counter } from './features/counter/Counter';
 import './App.css';
 import image from "./pics/logo.png";
 import heroes from "./pics/heroes.png"
+import SliderComponent from "./SliderComponent.js"
 
 function App() {
   return (
@@ -58,11 +59,10 @@ function App() {
         <h3>
           Bucură-te de titluri emblematice Warner Bros, HBO, Max Originals, DC, Cartoon Network și multe altele, aflate pentru prima dată într-un singur loc.
         </h3>
-        <div className="sliderAnimation1">
+        <SliderComponent trackId={'sliderTrack1'} />
 
-        </div>
-        <div className="sliderAnimation2">
-        </div>
+        <SliderComponent trackId={'sliderTrack2'} />
+
       </div>
     </div>
   );

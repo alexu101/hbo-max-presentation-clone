@@ -1,0 +1,41 @@
+.SliderComponent{
+    width: 100%;
+    display: flex;
+    overflow:hidden;
+    margin:auto;
+}
+
+#sliderTrack1{
+    display: flex;
+    width: calc(340px*20);
+   animation: scroll 100s linear infinite;
+}
+
+#sliderTrack2{
+    display: flex;
+    width: calc(340px*20);
+   animation: scroll 60s linear infinite;
+}
+
+@keyframes scroll{
+    0%{
+        transform: translateX(0px);
+    }
+    100%{
+        transform: translateX(calc(-340px *10));
+    }
+}
+
+.slide{
+    padding: 10px;
+    width: 340px;
+    display: flex;
+    align-items: center;
+    border-radius: 15px;
+    
+}
+
+.slide > img{
+width: 100%;
+}
+
