@@ -5,39 +5,30 @@ import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
 import "./SliderComponent.css"
 
-function SliderComponent({ trackId }) {
+function SliderComponent({ trackId, pics }) {
 
-    const links = ["https://hbomax-images.warnermediacdn.com/2022-01/680x383_cz-en_2001_a_space_oddyssey.jpg?host=wme-hbomax-drupal-prod.s3.amazonaws.com", "https://hbomax-images.warnermediacdn.com/2022-01/680x383_ro_batman_v_superman%20copy.jpg?host=wme-hbomax-drupal-prod.s3.amazonaws.com", "https://hbomax-images.warnermediacdn.com/2021-10/680x383_spain-en_be_cool_scooby_doo_0.jpg?host=wme-hbomax-drupal-prod.s3.amazonaws.com", "https://hbomax-images.warnermediacdn.com/2022-01/680x383_RO_his-dark-materials_original.jpg?host=wme-hbomax-drupal-prod.s3.amazonaws.com", "https://hbomax-images.warnermediacdn.com/2022-01/680x383_RO_zack_snyder%27s_justice_league_original.jpg?host=wme-hbomax-drupal-prod.s3.amazonaws.com", "https://hbomax-images.warnermediacdn.com/2022-01/680x383_nl_house_of_the_dragon_original.jpg?host=wme-hbomax-drupal-prod.s3.amazonaws.com", "https://hbomax-images.warnermediacdn.com/2022-01/680x383_RO_Fantastic_Beasts_and_Where_to_Find_Them.jpg?host=wme-hbomax-drupal-prod.s3.amazonaws.com", "https://hbomax-images.warnermediacdn.com/2022-01/680x383_RO_friends_the_reunion_original.jpg?host=wme-hbomax-drupal-prod.s3.amazonaws.com", "https://hbomax-images.warnermediacdn.com/2022-01/680x383_RO_friends.jpg?host=wme-hbomax-drupal-prod.s3.amazonaws.com", "https://hbomax-images.warnermediacdn.com/2022-01/680x383_RO_game_of_thrones_original.jpg?host=wme-hbomax-drupal-prod.s3.amazonaws.com", "https://hbomax-images.warnermediacdn.com/2022-01/680x383_ro_inception.jpg?host=wme-hbomax-drupal-prod.s3.amazonaws.com", "https://hbomax-images.warnermediacdn.com/2022-01/680x383_ro_gossipgirl_maxoriginal.jpg?host=wme-hbomax-drupal-prod.s3.amazonaws.com", "https://hbomax-images.warnermediacdn.com/2022-01/680x383_ro_looney_tunes.jpg?host=wme-hbomax-drupal-prod.s3.amazonaws.com", "https://hbomax-images.warnermediacdn.com/2021-10/680x383_spain-en_joker_0.jpg?host=wme-hbomax-drupal-prod.s3.amazonaws.com", "https://hbomax-images.warnermediacdn.com/2022-01/680x383_ro_gossipgirl_maxoriginal.jpg?host=wme-hbomax-drupal-prod.s3.amazonaws.com", "https://hbomax-images.warnermediacdn.com/2022-01/680x383_ro_inception.jpg?host=wme-hbomax-drupal-prod.s3.amazonaws.com", "https://hbomax-images.warnermediacdn.com/2022-01/680x383_RO_his-dark-materials_original.jpg?host=wme-hbomax-drupal-prod.s3.amazonaws.com", "https://hbomax-images.warnermediacdn.com/2022-01/680x383_RO_euphoria_original.jpg?host=wme-hbomax-drupal-prod.s3.amazonaws.com"]
+    const links = ["https://hbomax-images.warnermediacdn.com/2022-01/680x383_RO_mare_of_easttown_original.jpg?host=wme-hbomax-drupal-prod.s3.amazonaws.com", "https://hbomax-images.warnermediacdn.com/2022-01/680x383_RO_raised_by_wolves_original.jpg?host=wme-hbomax-drupal-prod.s3.amazonaws.com", "https://hbomax-images.warnermediacdn.com/2022-01/680x383_RO_rick_and_morty.jpg?host=wme-hbomax-drupal-prod.s3.amazonaws.com", "https://hbomax-images.warnermediacdn.com/2022-01/680x383_RO_scenes_from_a_marriage_original.png?host=wme-hbomax-drupal-prod.s3.amazonaws.com", "https://hbomax-images.warnermediacdn.com/2022-01/680x383_ro_sex_and_the_city_hbooriginal.jpg?host=wme-hbomax-drupal-prod.s3.amazonaws.com", "https://hbomax-images.warnermediacdn.com/2022-01/680x383_RO_succession_original.jpg?host=wme-hbomax-drupal-prod.s3.amazonaws.com", "https://hbomax-images.warnermediacdn.com/2022-01/680x383_RO_legacies.jpg?host=wme-hbomax-drupal-prod.s3.amazonaws.com", "https://hbomax-images.warnermediacdn.com/2022-01/680x383_ro_thebigbangtheory.jpg?host=wme-hbomax-drupal-prod.s3.amazonaws.com", "https://hbomax-images.warnermediacdn.com/2022-01/680x383_RO_The_lord_of_the_rings.jpg?host=wme-hbomax-drupal-prod.s3.amazonaws.com", "https://hbomax-images.warnermediacdn.com/2022-01/680x383_ro_the_flight_attendant_maxoriginal.jpg?host=wme-hbomax-drupal-prod.s3.amazonaws.com", "https://hbomax-images.warnermediacdn.com/2022-01/680x383_RO_the_handmaids_tale.jpg?host=wme-hbomax-drupal-prod.s3.amazonaws.com", "https://hbomax-images.warnermediacdn.com/2021-07/680x383_nordic_powerpuffgirls.jpg?host=wme-hbomax-drupal-prod.s3.amazonaws.com", "https://hbomax-images.warnermediacdn.com/2022-01/680x383_ro_the_sopranos_hbooriginal.jpg?host=wme-hbomax-drupal-prod.s3.amazonaws.com", "https://hbomax-images.warnermediacdn.com/2022-01/680x383_RO_The_undoing_original.jpg?host=wme-hbomax-drupal-prod.s3.amazonaws.com", "https://hbomax-images.warnermediacdn.com/2021-07/680x383_mk-en_the_thaw_black_maxoriginal.jpg?host=wme-hbomax-drupal-prod.s3.amazonaws.com"];
 
-    // const addPosts = (item) => {
-    //     db.collection("pic-slider1")
-    //         .add(
-    //             {
-    //                 picURL: item,
-    //             }
-    //         )
-    // }
+    const links2 = ["https://hbomax-images.warnermediacdn.com/2021-07/680x383_nordic_true_detective_original.jpg?host=wme-hbomax-drupal-prod.s3.amazonaws.com", "https://hbomax-images.warnermediacdn.com/2022-01/680x383_RO_blinded_by_the_lights.jpg?host=wme-hbomax-drupal-prod.s3.amazonaws.com", "https://hbomax-images.warnermediacdn.com/2022-01/680x383_RO_big_little_lies_original.jpg?host=wme-hbomax-drupal-prod.s3.amazonaws.com", "https://hbomax-images.warnermediacdn.com/2021-07/680x383_portugal_westworld_original.jpg?host=wme-hbomax-drupal-prod.s3.amazonaws.com", "https://hbomax-images.warnermediacdn.com/2022-01/680x383_nl_wonder_woman.jpg?host=wme-hbomax-drupal-prod.s3.amazonaws.com"];
 
-    // const addPics = () => {
-    //     links.forEach((link) => addPosts(link));
-    // }
+    const addPosts = (item) => {
+        db.collection("pic-slider2")
+            .add(
+                {
+                    picURL: item,
+                }
+            )
+    }
 
-    const [pics, setPics] = useState([]);
-    useEffect(() => {
-        db.collection("pic-slider1")
-            .onSnapshot(snapshot => (
-                setPics(
-                    snapshot.docs.map(doc => ({
-                        id: doc.id,
-                        data: doc.data(),
-                    }
-                    ))
-                )
-            ))
-    }, []);
+    const addPics = () => {
+        links.forEach((link) => addPosts(links2));
+    }
+
+
 
     return (
         <div className='SliderComponent' trackId>
+
             <div id={trackId} >
                 {
                     pics.map(({ id, data: { picURL } }) => (
@@ -50,7 +41,7 @@ function SliderComponent({ trackId }) {
                     ))
                 }
             </div>
-            {/* <button onClick={addPics} type="submit">click</button> */}
+
 
         </div >
     )

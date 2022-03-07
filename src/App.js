@@ -1,4 +1,9 @@
 import React from 'react';
+import { useEffect, useState } from 'react'
+import { db } from "./firebase.js"
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/auth';
+import 'firebase/compat/firestore';
 import logo from './logo.svg';
 import { Counter } from './features/counter/Counter';
 import './App.css';
@@ -7,6 +12,33 @@ import heroes from "./pics/heroes.png"
 import SliderComponent from "./SliderComponent.js"
 
 function App() {
+
+
+  const [pics1, setPics1] = useState([]);
+  const [pics2, setPics2] = useState([]);
+  useEffect(() => {
+    db.collection("pic-slider1")
+      .onSnapshot(snapshot => (
+        setPics1(
+          snapshot.docs.map(doc => ({
+            id: doc.id,
+            data: doc.data(),
+          }
+          ))
+        )
+      ));
+    db.collection("pic-slider2")
+      .onSnapshot(snapshot => (
+        setPics2(
+          snapshot.docs.map(doc => ({
+            id: doc.id,
+            data: doc.data(),
+          }
+          ))
+        )
+      ))
+  }, []);
+
   return (
     <div className="App">
       <div className="Section1">
@@ -59,9 +91,9 @@ function App() {
         <h3>
           Bucură-te de titluri emblematice Warner Bros, HBO, Max Originals, DC, Cartoon Network și multe altele, aflate pentru prima dată într-un singur loc.
         </h3>
-        <SliderComponent trackId={'sliderTrack1'} />
+        <SliderComponent trackId={'sliderTrack1'} pics={pics1} />
 
-        <SliderComponent trackId={'sliderTrack2'} />
+        <SliderComponent trackId={'sliderTrack2'} pics={pics2} />
 
       </div>
     </div>
