@@ -10,6 +10,10 @@ import './App.css';
 import image from "./pics/logo.png";
 import heroes from "./pics/heroes.png"
 import SliderComponent from "./SliderComponent.js"
+import ImportantDevicesIcon from '@mui/icons-material/ImportantDevices';
+import Option from "./Option.js";
+import PeopleOutlineIcon from '@mui/icons-material/PeopleOutline';
+import SignalWifiBadIcon from '@mui/icons-material/SignalWifiBad';
 
 function App() {
 
@@ -95,6 +99,11 @@ function App() {
 
         <SliderComponent trackId={'sliderTrack2'} pics={pics2} />
 
+        <div className="Icons">
+          <Option Icon={ImportantDevicesIcon} title={'Vizionare simultană'} subtitle={'Vizionează pe trei dispozitive în același timp.'} />
+          <Option Icon={PeopleOutlineIcon} title={'Profiluri personalizate'} subtitle={'Adaugă până la 5 profiluri pentru adulți și copii și bucură-te de conținut selectat cu atenție.'} />
+          <Option Icon={SignalWifiBadIcon} title={'Descarcă și vizionează când vrei, unde vrei'} subtitle={'Vizionezi ce dorești, oriunde te afli.'} />
+        </div>
       </div>
     </div>
   );

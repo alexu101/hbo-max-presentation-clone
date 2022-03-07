@@ -262,3 +262,17 @@ padding-top: 10px;
   padding-top: 70px !important;
 }
 
+.Icons{
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+  padding: 0;
+  margin: 20px;
+}
+
+@media screen and (max-width:780px) {
+  .Icons{
+    flex-direction: column;
+  }
+}
+
