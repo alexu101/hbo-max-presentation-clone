@@ -14,12 +14,19 @@ import ImportantDevicesIcon from '@mui/icons-material/ImportantDevices';
 import Option from "./Option.js";
 import PeopleOutlineIcon from '@mui/icons-material/PeopleOutline';
 import SignalWifiBadIcon from '@mui/icons-material/SignalWifiBad';
+import Modal from 'react-modal';
+import CloseIcon from '@mui/icons-material/Close';
+import IconButton from '@mui/material/IconButton';
 
 function App() {
 
 
   const [pics1, setPics1] = useState([]);
   const [pics2, setPics2] = useState([]);
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [phone, setPhone] = useState('');
+
   useEffect(() => {
     db.collection("pic-slider1")
       .onSnapshot(snapshot => (
@@ -43,6 +50,20 @@ function App() {
       ))
   }, []);
 
+  const [modal, setModal] = useState(false);
+  const modalStyle = {
+    content: {
+      top: '50%',
+      left: '50%',
+      right: 'auto',
+      bottom: 'auto',
+      marginRight: '-50%',
+      transform: 'translate(-50%, -50%)',
+      background: 'radial-gradient(circle, rgba(50,6,91,1) 37%, rgba(4,4,40,1) 78%)',
+      borderRadius: '25px'
+    },
+  };
+
   return (
     <div className="App">
       <div className="Section1">
@@ -56,7 +77,7 @@ function App() {
         <h1>HBO Max sosește pe 8 martie!</h1>
         <h3>Pregătește-te pentru o experiență de vizionare diferită</h3>
         <form>
-          <input type="text" placeholder='Adresa de e-mail' />
+          <input type="text" placeholder='Adresa de e-mail' place />
           <buttOn>ȚINE-MĂ LA CURENT!</buttOn>
           <div className="policy">
             <p>Prin completarea adresei de e-mail, accepți să primești e-mail-uri promoționale și alte oferte de la HBO Max (o companie WarnerMedia) și {<a href='www.google.ro'>PARTENERII</a>}  săi prin e-mail, social media și alte canale. Pentru a-ți retrage consimțământul și pentru a afla detalii despre drepturile tale, vezi opțiunile disponibile în {<a href='www.google.ro'>POLITICA DE CONFIDENȚIALITATE</a>}.</p>
@@ -104,6 +125,25 @@ function App() {
           <Option Icon={PeopleOutlineIcon} title={'Profiluri personalizate'} subtitle={'Adaugă până la 5 profiluri pentru adulți și copii și bucură-te de conținut selectat cu atenție.'} />
           <Option Icon={SignalWifiBadIcon} title={'Descarcă și vizionează când vrei, unde vrei'} subtitle={'Vizionezi ce dorești, oriunde te afli.'} />
         </div>
+      </div>
+      <div className="Section5">
+        <h1>Acces imediat în ziua lansării</h1>
+        <h3>Aștepți cu nerăbdare HBO Max?</h3>
+        <h3>Creează-ți cont pe HBO GO acum și îți vom transfera contul la HBO Max în ziua lansării.</h3>
+        <Modal
+          style={modalStyle}
+          isOpen={modal}
+          onRequestClose={() => setModal(false)}
+        >
+          <IconButton type='submit' onClick={() => setModal(false)}><CloseIcon style={{ color: "white" }} /></IconButton>
+          <form className='form'>
+            <input type="text" name="mail" placeholder='Adresa de e-mail' onChange={event => setEmail(event.target.value)} value={email} />
+            <input type="password" name='password' placeholder='Parolă' onChange={event => setPassword(event.target.value)} value={password} />
+            <input type="number" name='phone' placeholder='Număr de telefon' onChange={event => setPhone(event.target.value)} value={phone} />
+          </form>
+        </Modal>
+        <button onClick={() => setModal(true)}>CREEAZĂ CONT</button>
+
       </div>
     </div>
   );
