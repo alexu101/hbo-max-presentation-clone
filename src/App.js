@@ -17,6 +17,8 @@ import SignalWifiBadIcon from '@mui/icons-material/SignalWifiBad';
 import Modal from 'react-modal';
 import CloseIcon from '@mui/icons-material/Close';
 import IconButton from '@mui/material/IconButton';
+import Questions from './Questions.js'
+import Hubs from './Hubs.js'
 
 function App() {
 
@@ -143,7 +145,9 @@ function App() {
           </form>
         </Modal>
         <button onClick={() => setModal(true)}>CREEAZĂ CONT</button>
-
+      </div>
+      <div className="Section6">
+        <Questions />
       </div>
     </div>
   );
