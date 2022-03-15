@@ -1,0 +1,12 @@
+.LoremIpsum{
+    padding: 20px;
+    background: rgb(211,45,253);
+    background: linear-gradient(0deg, rgb(51, 6, 82) 5%, rgba(15,1,19,1) 85%);
+    color: white;
+}
+.LoremIpsum>p{
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-bottom: 20px;
+    text-align:justify;
+}
