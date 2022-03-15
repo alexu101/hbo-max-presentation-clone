@@ -21,15 +21,32 @@ import Questions from './Questions.js'
 import Hubs from './Hubs.js'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import LoremIpsum from './LoremIpsum.js';
+import { auth } from "./firebase.js"
+import emailjs from '@emailjs/browser';
+import { useRef } from 'react';
 
 function App() {
-
 
   const [pics1, setPics1] = useState([]);
   const [pics2, setPics2] = useState([]);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [phone, setPhone] = useState('');
+  const [subscriber, setSubscriber] = useState('');
+
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm('service_5mwuydo', 'template_5db1cdk', e.target, 'Ve_MOcNOYM5Urtkge')
+      .then((result) => {
+        console.log(result.text);
+      }, (error) => {
+        console.log(error.text);
+      });
+    setSubscriber('');
+  }
+
 
   useEffect(() => {
     db.collection("pic-slider1")
@@ -63,10 +80,28 @@ function App() {
       bottom: 'auto',
       marginRight: '-50%',
       transform: 'translate(-50%, -50%)',
-      background: 'radial-gradient(circle, rgba(50,6,91,1) 37%, rgba(4,4,40,1) 78%)',
+      background: 'radial-gradient(circle, rgba(126,71,175,1) 40%, rgba(117,36,166,1) 56%, rgba(50,5,91,1) 94%)',
       borderRadius: '25px'
     },
   };
+
+  const register = (e) => {
+    e.preventDefault();
+    if (!email)
+      return alert('Enter a valid email adress!');
+    if (!phone)
+      return alert('Enter a valid phone number!');
+    if (!password)
+      return alert('Enter a valid password!');
+    auth.createUserWithEmailAndPassword(email, password).then((userAuth) => {
+      userAuth.user.updateProfile({
+        email: email,
+        password: password,
+        phone: phone,
+      })
+      setModal(false);
+    })
+  }
 
   return (
 
@@ -75,7 +110,7 @@ function App() {
         <div className="Section1">
           <header>
             <img src={image} />
-            <h4>INTRĂ ÎN CONT</h4>
+            <a href='https://www.hbomax.com/subscribe'>INTRĂ ÎN CONT</a>
           </header>
           <img src={heroes} alt="" />
         </div>
@@ -84,8 +119,8 @@ function App() {
             <div className="Section2">
               <h1>HBO Max sosește pe 8 martie!</h1>
               <h3>Pregătește-te pentru o experiență de vizionare diferită</h3>
-              <form>
-                <input type="text" placeholder='Adresa de e-mail' place />
+              <form onSubmit={sendEmail}>
+                <input type="text" placeholder='Adresa de e-mail' onChange={e => { setSubscriber(e.target.value) }} value={subscriber} />
                 <buttOn>ȚINE-MĂ LA CURENT!</buttOn>
                 <div className="policy">
                   <p>Prin completarea adresei de e-mail, accepți să primești e-mail-uri promoționale și alte oferte de la HBO Max (o companie WarnerMedia) și {<a href='www.google.ro'>PARTENERII</a>}  săi prin e-mail, social media și alte canale. Pentru a-ți retrage consimțământul și pentru a afla detalii despre drepturile tale, vezi opțiunile disponibile în {<a href='www.google.ro'>POLITICA DE CONFIDENȚIALITATE</a>}.</p>
@@ -148,9 +183,10 @@ function App() {
                   <input type="text" name="mail" placeholder='Adresa de e-mail' onChange={event => setEmail(event.target.value)} value={email} />
                   <input type="password" name='password' placeholder='Parolă' onChange={event => setPassword(event.target.value)} value={password} />
                   <input type="number" name='phone' placeholder='Număr de telefon' onChange={event => setPhone(event.target.value)} value={phone} />
+                  <button onClick={register}>SUBMIT</button>
                 </form>
               </Modal>
-              <button onClick={() => setModal(true)}>CREEAZĂ CONT</button>
+              <button onClick={(e) => setModal(e)}>CREEAZĂ CONT</button>
             </div>
             <div className="Section6">
               <Questions />

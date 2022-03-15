@@ -21,9 +21,12 @@ function Hubs() {
                 <img src={cn} />
             </div>
             <h6>*Anumite titluri nu vor fi disponibile odata cu lansarea.</h6>
-            <Link to='/lorem-ipsum'>POLITICĂ DE CONFIDENȚIALITATE</Link>
-            <Link to='/lorem-ipsum'>NU ÎMI UTILIZA DATELE PERSONALE</Link>
-            <Link to='/lorem-ipsum'>CONDIȚII DE UTILIZARE</Link>
+            <div className="links">
+                <Link className='link' to='/lorem-ipsum'>POLITICĂ DE CONFIDENȚIALITATE</Link>
+                <Link className='link' to='/lorem-ipsum'>NU ÎMI UTILIZA DATELE PERSONALE</Link>
+                <Link className='link' to='/lorem-ipsum'>CONDIȚII DE UTILIZARE</Link>
+            </div>
+
             <h6>©2022 HBO Europe s.r.o. All Rights Reserved. HBO Max™ is used under license.</h6>
         </div>
     )

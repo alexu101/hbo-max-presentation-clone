@@ -73,3 +73,34 @@
     margin: 5px;
 }
 
+.links{
+    display:flex;
+    margin: 10px;
+    text-align: center;
+}
+
+.link{
+    margin: 10px;
+    text-decoration: none;
+    color: rgb(199, 165, 231);
+    border-radius: 30px;
+    border:2px solid rgba(223, 118, 236, 0.226);
+    padding: 10px;
+    font-weight: 600;
+    transition: 0.3s ease-in;
+}
+
+.link:hover{
+    border:2px solid rgb(210, 192, 245);
+    color: rgb(222, 205, 248);
+    transition: 0.3s ease-in;
+}
+
+@media screen and (max-width:750px) {
+    .links{
+        flex-direction: column;
+    }
+    .link{
+        margin-bottom: 1px;
+    }
+}
